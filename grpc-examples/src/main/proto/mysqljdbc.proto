@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_mltiple_files = true;
+option java_package = "org.github.omnbmh.grpc.examples.jdbc";
+
+service GetJdbc {
+	rpc getJdbc (JdbcRequest) return (JdbcResponse) {}
+}
+
+message JdbcRequest{
+	string name = 1;
+}
+
+message JdbcResponse {
+	string jdbcurl = 1;
+	string username = 2;
+	string userpassword = 3;
+	string driverclassname = 4;
+}

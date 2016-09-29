@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.github.omnbmh.grpc.proto.routeguide";
+option java_outer_classname = "RouteGuideProto";
+option objc_class_prefix = "RTG";
+
+package routeguide;
+
+// 服务端生成的接口
+service RouteGuide {
+  // 简单 RPC
+  rpc GetFeature (Point) returns (Feature) {}
+  
+  // 服务端 到 客户端 的流 RPC
+  rpc ListFeatures (Rectangle) returns (stream Feature) {}
+  
+  // 客户端 到 服务端 的流 RPC
+  rpc RecordRoute (stream Point) returns (RouteSummary) {}
+  
+  //  双向的流 RPC
+  rpc RouteChat (stream RouteNote) returns (stream RouteNote) {}
+}
+
+message Point {
+  int32 latitude = 1;
+  int32 longitude = 2;
+}
+
+message Rectangle {
+  Point lo = 1;
+  Point hi = 2;
+}
+
+message Feature {
+	string name = 1;
+	Point location = 2;
+}
+
+message FeatureDatabase {
+	repeated Feature feature = 1;
+}
+
+message RouteNote {
+	Point location = 1;
+	string message = 2;
+}
+
+message RouteSummary {
+	int32 point_count = 1;
+	int32 feature_count = 2;
+	int32 distance = 3;
+	int32 elapsed_time = 4;
+}

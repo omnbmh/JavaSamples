@@ -1,8 +1,8 @@
 package org.github.omnbmh.grpc.examples.service;
 
-import org.github.omnbmh.grpc.examples.helloworld.GreeterGrpc;
-import org.github.omnbmh.grpc.examples.helloworld.HelloReply;
-import org.github.omnbmh.grpc.examples.helloworld.HelloRequest;
+import org.github.omnbmh.grpc.proto.helloworld.GreeterGrpc;
+import org.github.omnbmh.grpc.proto.helloworld.HelloReply;
+import org.github.omnbmh.grpc.proto.helloworld.HelloRequest;
 
 import io.grpc.stub.StreamObserver;
 
