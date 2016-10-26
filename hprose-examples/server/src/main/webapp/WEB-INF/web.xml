@@ -17,9 +17,33 @@
             <param-value>true</param-value>
         </init-param>
     </servlet>
+    <servlet>
+        <servlet-name>HproseUserServlet</servlet-name>
+        <servlet-class>hprose.server.HproseServlet</servlet-class>
+        <init-param>
+            <param-name>class</param-name>
+            <param-value>org.github.omnbmh.hprose.examples.server.Exam2|org.github.omnbmh.hprose.examples.server.Exam1|ex2,org.github.omnbmh.hprose.examples.server.Exam1||ex1,org.github.omnbmh.hprose.examples.server.UserServer||user_s</param-value>
+        </init-param>
+        <init-param>
+            <param-name>mode</param-name>
+            <param-value>propertyMode</param-value>
+        </init-param>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>type</param-name>
+            <param-value>org.github.omnbmh.hprose.examples.entry.User|User</param-value>
+        </init-param>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/Hello</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HproseUserServlet</servlet-name>
+        <url-pattern>/User</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

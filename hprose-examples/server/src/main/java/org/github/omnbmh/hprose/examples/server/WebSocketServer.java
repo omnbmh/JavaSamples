@@ -7,9 +7,6 @@ import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 
-/**
- * Created by chendezhi on 2016/10/24.
- */
 @ServerEndpoint("/wshello")
 public class WebSocketServer {
     private final HproseWebSocketService service = new HproseWebSocketService();
