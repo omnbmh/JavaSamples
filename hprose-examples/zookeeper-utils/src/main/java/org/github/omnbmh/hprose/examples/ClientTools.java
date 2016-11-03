@@ -5,6 +5,7 @@ import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,7 +21,7 @@ public class ClientTools {
         return serverInfoList;
     }
 
-    public  static  void  check(){
+    public static void reconnected() {
         ZooKeeper zk = ZKTools.getZooKeeperClient();
         try {
             zk.exists("/Apps/OrgamsApi", true);
@@ -32,26 +33,32 @@ public class ClientTools {
     }
 
     public static void init() {
+        serverInfoList = new ArrayList<>();
         try {
             ZooKeeper zk = ZKTools.getZooKeeperClient();
             if (zk.exists("/Apps/OrgamsApi", true) == null) {
                 return;
             }
-            serverInfoList = zk.getChildren("/Apps/OrgamsApi", new Watcher() {
+            List<String> serverNodes = zk.getChildren("/Apps/OrgamsApi", new Watcher() {
                 @Override
                 public void process(WatchedEvent event) {
                     System.out.println("--- client ---");
-                    System.out.println(event.getPath());
-                    System.out.println(event.getType());
+                    System.out.println("path: " + event.getPath());
+                    System.out.println("type: " + event.getType().name());
+                    System.out.println("state: " + event.getState());
+                    if (event.getType().getIntValue() < 0) {
+                        reconnected();
+                    }
                     if (event.getType().compareTo(Event.EventType.NodeChildrenChanged) == 0) {
                         System.out.println("Children Node Changed!");
                         init();
                     }
                 }
             });
-            for (int i = 0; i < serverInfoList.size(); i++) {
-                // System.out.println(servers.get(i));
-                System.out.println(serverInfoList.get(i) + " - " + new String(zk.getData("/Apps/OrgamsApi/" + serverInfoList.get(i), true, null)));
+            for (int i = 0; i < serverNodes.size(); i++) {
+                String serverInfo = new String(zk.getData("/Apps/OrgamsApi/" + serverNodes.get(i), true, null));
+                System.out.println(serverNodes.get(i) + " - " + serverInfo);
+                serverInfoList.add(serverInfo);
             }
         } catch (KeeperException e) {
             e.printStackTrace();
