@@ -4,7 +4,24 @@
 
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-    <display-name>Hprose examples</display-name>
+    <display-name>Hprose Server</display-name>
+    <servlet>
+        <servlet-name>RegisterServer</servlet-name>
+        <servlet-class>org.github.omnbmh.hprose.examples.server.Servlet.InitServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+        <init-param>
+            <param-name>protrol</param-name>
+            <param-value>http</param-value>
+        </init-param>
+        <init-param>
+            <param-name>host</param-name>
+            <param-value>10.100.142.94</param-value>
+        </init-param>
+        <init-param>
+            <param-name>port</param-name>
+            <param-value>8080</param-value>
+        </init-param>
+    </servlet>
     <servlet>
         <servlet-name>HelloServlet</servlet-name>
         <servlet-class>hprose.server.HproseServlet</servlet-class>
