@@ -1,4 +1,4 @@
-package org.github.omnbmh.zookeeper.configcenter;
+package org.github.omnbmh;
 
 /**
  * Hello world!

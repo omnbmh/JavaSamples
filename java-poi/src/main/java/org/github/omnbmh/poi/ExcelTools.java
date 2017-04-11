@@ -1,4 +1,4 @@
-package org.github.omnbmh.zookeeper.configcenter.zookeeper;
+package org.github.omnbmh.poi;
 
 /**
  * Created With IntelliJ IDEA CE
@@ -6,6 +6,6 @@ package org.github.omnbmh.zookeeper.configcenter.zookeeper;
  * User: dezhichen@creditease.cn
  * Desc: Write Something!
  */
-public class ChooseServiceTest {
+public class ExcelTools {
 
 }
