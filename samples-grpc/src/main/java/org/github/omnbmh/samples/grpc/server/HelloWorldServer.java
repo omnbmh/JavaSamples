@@ -1,8 +1,8 @@
-package org.github.omnbmh.grpc.examples.server;
+package org.github.omnbmh.samples.grpc.server;
 
 import java.io.IOException;
 
-import org.github.omnbmh.grpc.examples.service.HelloWorldServiceImpl;
+import org.github.omnbmh.samples.grpc.service.HelloWorldServiceImpl;
 
 import io.grpc.internal.ServerImpl;
 import io.grpc.netty.NettyServerBuilder;

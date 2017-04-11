@@ -1,10 +1,11 @@
-package org.github.omnbmh.grpc.examples.service;
+package org.github.omnbmh.samples.grpc.service;
 
-import org.github.omnbmh.grpc.proto.helloworld.GreeterGrpc;
-import org.github.omnbmh.grpc.proto.helloworld.HelloReply;
-import org.github.omnbmh.grpc.proto.helloworld.HelloRequest;
+
 
 import io.grpc.stub.StreamObserver;
+import org.github.omnbmh.samples.grpc.protobuf.GreeterGrpc;
+import org.github.omnbmh.samples.grpc.protobuf.HelloReply;
+import org.github.omnbmh.samples.grpc.protobuf.HelloRequest;
 
 public class HelloWorldServiceImpl extends GreeterGrpc.GreeterImplBase {
 

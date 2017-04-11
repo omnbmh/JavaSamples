@@ -1,13 +1,12 @@
-package org.github.omnbmh.grpc.examples.client;
+package org.github.omnbmh.samples.grpc.client;
 
 import java.util.concurrent.TimeUnit;
 
-import org.github.omnbmh.grpc.proto.jdbc.GetJdbcGrpc;
-import org.github.omnbmh.grpc.proto.jdbc.JdbcRequest;
-import org.github.omnbmh.grpc.proto.jdbc.JdbcResponse;
-
 import io.grpc.ManagedChannel;
 import io.grpc.netty.NettyChannelBuilder;
+import org.github.omnbmh.samples.grpc.protobuf.GetJdbcGrpc;
+import org.github.omnbmh.samples.grpc.protobuf.JdbcRequest;
+import org.github.omnbmh.samples.grpc.protobuf.JdbcResponse;
 
 public class GetJdbcClient {
 	private final GetJdbcGrpc.GetJdbcBlockingStub client;

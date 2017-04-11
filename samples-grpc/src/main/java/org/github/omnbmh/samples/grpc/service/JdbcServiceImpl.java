@@ -1,10 +1,9 @@
-package org.github.omnbmh.grpc.examples.service;
-
-import org.github.omnbmh.grpc.proto.jdbc.GetJdbcGrpc;
-import org.github.omnbmh.grpc.proto.jdbc.JdbcRequest;
-import org.github.omnbmh.grpc.proto.jdbc.JdbcResponse;
+package org.github.omnbmh.samples.grpc.service;
 
 import io.grpc.stub.StreamObserver;
+import org.github.omnbmh.samples.grpc.protobuf.GetJdbcGrpc;
+import org.github.omnbmh.samples.grpc.protobuf.JdbcRequest;
+import org.github.omnbmh.samples.grpc.protobuf.JdbcResponse;
 
 public class JdbcServiceImpl extends GetJdbcGrpc.GetJdbcImplBase {
 	public @Override void getJdbc(JdbcRequest request, StreamObserver<JdbcResponse> responseObserver) {

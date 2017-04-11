@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-option java_mltiple_files = true;
-option java_package = "org.github.omnbmh.grpc.examples.jdbc";
+option java_multiple_files = true;
+option java_package = "org.github.omnbmh.samples.grpc.protobuf";
 
 service GetJdbc {
-	rpc getJdbc (JdbcRequest) return (JdbcResponse) {}
+	rpc getJdbc (JdbcRequest) returns (JdbcResponse) {}
 }
 
 message JdbcRequest{

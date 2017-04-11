@@ -1,8 +1,8 @@
-package org.github.omnbmh.grpc.examples.server;
+package org.github.omnbmh.samples.grpc.server;
 
 import java.io.IOException;
 
-import org.github.omnbmh.grpc.examples.service.JdbcServiceImpl;
+import org.github.omnbmh.samples.grpc.service.JdbcServiceImpl;
 
 import io.grpc.internal.ServerImpl;
 import io.grpc.netty.NettyServerBuilder;

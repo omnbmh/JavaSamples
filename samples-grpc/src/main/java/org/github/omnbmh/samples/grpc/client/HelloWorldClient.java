@@ -1,13 +1,12 @@
-package org.github.omnbmh.grpc.examples.client;
+package org.github.omnbmh.samples.grpc.client;
 
 import java.util.concurrent.TimeUnit;
 
-import org.github.omnbmh.grpc.proto.helloworld.GreeterGrpc;
-import org.github.omnbmh.grpc.proto.helloworld.HelloReply;
-import org.github.omnbmh.grpc.proto.helloworld.HelloRequest;
-
 import io.grpc.ManagedChannel;
 import io.grpc.netty.NettyChannelBuilder;
+import org.github.omnbmh.samples.grpc.protobuf.GreeterGrpc;
+import org.github.omnbmh.samples.grpc.protobuf.HelloReply;
+import org.github.omnbmh.samples.grpc.protobuf.HelloRequest;
 
 public class HelloWorldClient {
 	private final GreeterGrpc.GreeterBlockingStub client;
