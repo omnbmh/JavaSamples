@@ -6,7 +6,7 @@ option java_package = "org.github.omnbmh.samples.zookeeper.protobuf";
 
 //package helloworld;
 
-// The greeting service definition.
+// The PingPong service definition.
 service PingPong {
   rpc ping (Ping) returns (Pong) {}
 }
