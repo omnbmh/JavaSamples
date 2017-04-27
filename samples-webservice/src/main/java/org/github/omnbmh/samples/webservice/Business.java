@@ -1,4 +1,4 @@
-package org.github.omnbmh.samples;
+package org.github.omnbmh.samples.webservice;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -12,7 +12,8 @@ import java.rmi.RemoteException;
  * @version 2017/4/26 上午11:18
  * @since 1.7
  */
-public interface Business extends Remote {
 
-  public String echo(String message) throws RemoteException;
+public interface Business {
+
+  public String echo(String message);
 }
