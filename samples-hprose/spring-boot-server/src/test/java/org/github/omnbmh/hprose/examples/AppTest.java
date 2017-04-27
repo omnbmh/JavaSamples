@@ -1,4 +1,4 @@
-package org.github.omnbmh.samples;
+package org.github.omnbmh.hprose.examples;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
