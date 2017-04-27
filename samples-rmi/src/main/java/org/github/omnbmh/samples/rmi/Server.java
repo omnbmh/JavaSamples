@@ -4,8 +4,6 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
-import org.github.omnbmh.samples.Business;
-import org.github.omnbmh.samples.BusinessImpl;
 
 /**
  * Created With IntelliJ IDEA CE
@@ -26,6 +24,7 @@ public class Server {
 
       Registry registry = LocateRegistry.createRegistry(1099);
       registry.rebind(name, business);
+      System.out.println("Server has been started!");
     } catch (RemoteException e) {
       System.out.println(e);
     }

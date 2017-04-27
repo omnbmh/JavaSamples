@@ -4,7 +4,6 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import org.github.omnbmh.samples.Business;
 
 /**
  * Created With IntelliJ IDEA CE
@@ -12,7 +11,6 @@ import org.github.omnbmh.samples.Business;
  * Desc: Write Something!
  * <p>more info!</p>
  *
- * @author *_*
  * @version 2017/4/26 上午11:27
  * @since 1.7
  */
@@ -24,7 +22,9 @@ public class Client {
       Registry registry = LocateRegistry.getRegistry("127.0.0.1");
       Business business = (Business) registry.lookup(name);
       business.echo("hello");
+      System.out.println("---- send hello");
       business.echo("quit");
+      System.out.println("---- shutdown server");
     } catch (RemoteException e) {
       System.out.println(e);
     } catch (NotBoundException e) {
