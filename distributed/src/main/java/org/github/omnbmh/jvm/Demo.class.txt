@@ -1,0 +1,28 @@
+Compiled from "Demo.java"
+public class org.github.omnbmh.jvm.Demo {
+  public org.github.omnbmh.jvm.Demo();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public void execute();
+    Code:
+       0: invokestatic  #2                  // Method org/github/omnbmh/jvm/A.execute:()I
+       3: pop
+       4: new           #3                  // class org/github/omnbmh/jvm/A
+       7: dup
+       8: invokespecial #4                  // Method org/github/omnbmh/jvm/A."<init>":()V
+      11: astore_1
+      12: aload_1
+      13: invokevirtual #5                  // Method org/github/omnbmh/jvm/A.bar:()I
+      16: pop
+      17: new           #6                  // class org/github/omnbmh/jvm/B
+      20: dup
+      21: invokespecial #7                  // Method org/github/omnbmh/jvm/B."<init>":()V
+      24: astore_2
+      25: aload_2
+      26: invokeinterface #8,  1            // InterfaceMethod org/github/omnbmh/jvm/IFoo.bar:()I
+      31: pop
+      32: return
+}
