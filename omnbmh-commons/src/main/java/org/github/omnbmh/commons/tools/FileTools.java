@@ -4,8 +4,12 @@ import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import org.apache.log4j.Logger;
 
 import java.io.File;
@@ -147,5 +151,51 @@ public final class FileTools {
       LOGGER.error("IO Error", e);
 
     }
+  }
+
+  //Classic, < JDK7
+  private static void writeBytesToFileClassic(byte[] bFile, String fileDest) {
+
+    FileOutputStream fileOuputStream = null;
+
+    try {
+      fileOuputStream = new FileOutputStream(fileDest);
+      fileOuputStream.write(bFile);
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    } finally {
+      if (fileOuputStream != null) {
+        try {
+          fileOuputStream.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+
+  }
+
+  //Since JDK 7 - try resources
+  private static void writeBytesToFile(byte[] bFile, String fileDest) {
+
+    try (FileOutputStream fileOuputStream = new FileOutputStream(fileDest)) {
+      fileOuputStream.write(bFile);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+  }
+
+  //Since JDK 7, NIO
+  private static void writeBytesToFileNio(byte[] bFile, String fileDest) {
+
+    try {
+      Path path = Paths.get(fileDest);
+      Files.write(path, bFile);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
   }
 }
