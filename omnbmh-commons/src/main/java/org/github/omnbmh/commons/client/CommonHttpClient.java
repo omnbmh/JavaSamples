@@ -2,8 +2,8 @@ package org.github.omnbmh.commons.client;
 
 /**
  * Created With IntelliJ IDEA CE
- * Desc: Write Something!
+ * Desc: Http 客户端!
  */
-public class HttpClient {
+public class CommonHttpClient {
 
 }
