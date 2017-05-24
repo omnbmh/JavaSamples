@@ -1,6 +1,7 @@
 package org.github.omnbmh.commons.tools;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -75,7 +76,7 @@ public final class FileTools {
     return filename;
   }
 
-  public  static  byte[] getBytes(String filePath){
+  public static byte[] getBytes(String filePath) {
 //    String key = "";
 //    try (FileReader fr = new FileReader(filePath)) {fr.
 //      BufferedReader br = new BufferedReader(fr);
@@ -135,19 +136,17 @@ public final class FileTools {
       return key;
     } catch (IOException e) {
       LOGGER.error("IO Error", e);
-    }
-    finally {
+    } finally {
     }
     return key;
   }
 
-  public  static  void  writeFile(String content,String filePath){
-    try(FileWriter fw = new FileWriter(filePath))
-    {
+  public static void writeFile(String content, String filePath) {
+    try (FileWriter fw = new FileWriter(filePath)) {
       fw.write(content);
       fw.close();
       LOGGER.info("file write finish :" + filePath);
-    }catch (IOException e){
+    } catch (IOException e) {
       LOGGER.error("IO Error", e);
 
     }
@@ -197,5 +196,34 @@ public final class FileTools {
       e.printStackTrace();
     }
 
+  }
+
+  public static boolean moveTo() {
+    return true;
+  }
+
+  public static boolean copyTo() {
+    return true;
+  }
+
+  public static boolean writeMultiLines(String fileDest, String[] lines) {
+    try {
+      //使用面向字符流的BufferedWriter类。
+      //相当于在FileWriter类上再套上一层管道。
+      BufferedWriter out = new BufferedWriter(new FileWriter(fileDest));
+
+      for (String str : lines) {
+        //FileWriter类的Write（）方法向文件中写入字符。
+        out.write(str);
+        out.newLine();
+      }
+      //清空流里的内容并关闭它，如果不调用该方法还没有完成所有数据的写操作，程序就结束了。
+      out.close();
+    } catch (IOException e) {
+      LOGGER.error("Problem writing" + fileDest + e.getMessage(), e);
+      return false;
+    }
+
+    return true;
   }
 }
