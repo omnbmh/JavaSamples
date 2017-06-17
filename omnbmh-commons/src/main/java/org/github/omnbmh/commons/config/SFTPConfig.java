@@ -2,11 +2,11 @@ package org.github.omnbmh.commons.config;
 
 /**
  * Created With IntelliJ IDEA CE
- * org.github.omnbmh.commons.config FTP 配置!
+ * SFTP 配置!
  * <p>More Info!</p>
  *
  */
-public class FTPConfig {
+public class SFTPConfig {
 
   private String ip;
   private int port;
