@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.github.omnbmh.samples.grpc.protobuf";
+
+service GetJdbc {
+	rpc getJdbc (JdbcRequest1) returns (JdbcResponse1) {}
+}
+
+message JdbcRequest1{
+	string name = 1;
+}
+
+message JdbcResponse1 {
+	string jdbcurl = 1;
+	string username = 2;
+	string userpassword = 3;
+	string driverclassname = 4;
+}

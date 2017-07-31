@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.github.omnbmh.samples.grpc.protobuf";
+
+service SearchDbData {
+	rpc searchDbDataByJdbc (JdbcRequest) returns (JdbcResponse) {}
+	rpc searchDbDataByDruid (DruidRequest) returns (DruidResponse) {}
+}
+
+message JdbcRequest{
+	string datasourcename = 1;
+}
+
+message JdbcResponse {
+	string result = 1;
+	string exetime = 2;
+	string servertimestamp = 3;
+}
+
+message DruidRequest{
+	string datasourcename = 1;
+}
+
+message DruidResponse {
+	string result = 1;
+	string exetime = 2;
+	string servertimestamp = 3;
+}

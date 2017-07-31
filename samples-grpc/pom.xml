@@ -5,14 +5,18 @@
 	<groupId>org.github.omnbmh.samples</groupId>
 	<artifactId>samples-grpc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+  <modules>
+    <module>samples-grpc-client</module>
+    <module>samples-grpc-server</module>
+  </modules>
+  <packaging>pom</packaging>
 
 	<name>samples-grpc</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<grpc.version>1.0.0</grpc.version><!-- CURRENT_GRPC_VERSION -->
+		<grpc.version>1.4.0</grpc.version><!-- CURRENT_GRPC_VERSION -->
 	</properties>
 
 	<dependencies>
@@ -31,6 +35,16 @@
 			<artifactId>grpc-stub</artifactId>
 			<version>${grpc.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.github.omnbmh.samples</groupId>
+			<artifactId>samples-jdbc</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.github.omnbmh</groupId>
+			<artifactId>omnbmh-commons</artifactId>
+			<version>0.1</version>
+		</dependency>
 	</dependencies>
 	<pluginRepositories><!-- 插件库 -->
 		<pluginRepository>
@@ -43,18 +57,25 @@
 			<extension>
 				<groupId>kr.motd.maven</groupId>
 				<artifactId>os-maven-plugin</artifactId>
-				<version>1.4.0.Final</version>
+				<version>1.5.0.Final</version>
 			</extension>
 		</extensions>
 		<plugins>
 			<plugin>
-				<groupId>com.google.protobuf.tools</groupId>
-				<artifactId>maven-protoc-plugin</artifactId>
-				<version>0.4.4</version>
+				<groupId>org.xolstice.maven.plugins</groupId>
+				<artifactId>protobuf-maven-plugin</artifactId>
+				<version>0.5.0</version>
 				<configuration>
-					<protocArtifact>com.google.protobuf:protoc:3.0.0-beta-2:exe:${os.detected.classifier}</protocArtifact>
+					<!--默认值-->
+					<!--<protoSourceRoot>${project.basedir}/src/main/proto</protoSourceRoot>-->
+					<!--默认值-->
+					<!--<outputDirectory>${project.build.directory}/generated-sources/protobuf/java</outputDirectory>-->
+					<!-- <outputDirectory>${project.build.sourceDirectory}</outputDirectory -->
+					<!--设置是否在生成java文件之前清空outputDirectory的文件，默认值为true，设置为false时也会覆盖同名文件-->
+					<!-- clearOutputDirectory>false</clearOutputDirectory -->
+					<protocArtifact>com.google.protobuf:protoc:3.3.0:exe:${os.detected.classifier}</protocArtifact>
 					<pluginId>grpc-java</pluginId>
-					<pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
+					<pluginArtifact>io.grpc:protoc-gen-grpc-java:1.4.0:exe:${os.detected.classifier}</pluginArtifact>
 				</configuration>
 				<executions>
 					<execution>

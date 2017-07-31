@@ -1,0 +1,28 @@
+syntax = "proto3";
+/*
+工作中用到的辅助工具类
+*/
+option java_multiple_files = true;
+option java_package = "org.github.omnbmh.samples.grpc.protobuf.work.assist";
+option java_outer_classname = "WorkAssistProto";
+//option objc_class_prefix = "HLW";
+
+package protobuf.work.assist;
+
+service TextCodec {
+  // DES加密
+  rpc encryptText (TextRequest) returns (TextResponse) {}
+  // DES解密
+  rpc decryptText (TextRequest) returns (TextResponse) {}
+}
+
+message TextRequest {
+  string text = 1;
+  string key = 2;
+}
+
+message TextResponse {
+  string text = 1;
+  string encryptText = 2;
+  string decryptText = 3;
+}
