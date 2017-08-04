@@ -29,7 +29,7 @@ public class WorkAssistClient {
   }
 
   public static void main(String[] args) {
-    WorkAssistClient c = new WorkAssistClient("127.0.0.1", 50010);
+    WorkAssistClient c = new WorkAssistClient("10.100.139.38", 50010);
     TextResponse result = c.encryptText();
     System.out.println("from server receive " + result.getEncryptText());
 

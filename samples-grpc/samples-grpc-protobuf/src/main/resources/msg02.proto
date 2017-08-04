@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.github.omnbmh.samples.grpc.protobuf.msg02";
+//option java_outer_classname = "HelloWorldProto";
+//option objc_class_prefix = "HLW";
+
+package protobuf.msg;
+
+message Message {
+  string name = 1;
+  string age = 2;
+}
+

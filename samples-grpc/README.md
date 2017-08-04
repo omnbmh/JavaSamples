@@ -11,4 +11,6 @@ mvn compile
 ### 模块 samples-grpc-protobuf
 用于使用protobuf插件生成java代码
 
+### 模块 samples-grpc-server
+
 > http://doc.oschina.net/grpc
