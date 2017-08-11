@@ -2,6 +2,7 @@ package org.github.omnbmh.samples.grpc.protobuf.test;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import junit.framework.TestCase;
+import org.apache.commons.lang3.StringUtils;
 import org.github.omnbmh.commons.tools.GsonTools;
 import org.github.omnbmh.samples.grpc.protobuf.msg01.Message;
 
@@ -12,6 +13,12 @@ import org.github.omnbmh.samples.grpc.protobuf.msg01.Message;
  * 2017/8/4 下午1:19
  */
 public class MessagePropertyTest extends TestCase {
+
+  public void testBuilder() {
+//    Message mm01 = Message.newBuilder().setName(null).build();
+    Message mm01 = Message.newBuilder().setName(StringUtils.defaultString(null)).build();
+    System.out.println(GsonTools.getJsonStringFromObject(mm01));
+  }
 
   public void testToByteArray() throws InvalidProtocolBufferException {
     Message mm01 = Message.newBuilder().setName("Wang").build();
@@ -34,7 +41,7 @@ public class MessagePropertyTest extends TestCase {
   public void testParseForm() throws InvalidProtocolBufferException {
     org.github.omnbmh.samples.grpc.protobuf.msg03.Message mm03 = org.github.omnbmh.samples.grpc.protobuf.msg03.Message
         .newBuilder()
-        .setName("Wang").setAge("18").setSex("Nv").build();
+        .setName("王小美").setAge("18").setSex("Nv").build();
 
     org.github.omnbmh.samples.grpc.protobuf.msg02.Message mm02 = org.github.omnbmh.samples.grpc.protobuf.msg02.Message
         .parseFrom(mm03.toByteArray());

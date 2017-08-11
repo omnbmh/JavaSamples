@@ -34,10 +34,11 @@ public final class Pingpong {
   static {
     java.lang.String[] descriptorData = {
       "\n\016pingpong.proto\"\024\n\004Ping\022\014\n\004name\030\001 \001(\t\"\027" +
-      "\n\004Pong\022\017\n\007message\030\001 \001(\t2\"\n\010PingPong\022\026\n\004p" +
-      "ing\022\005.Ping\032\005.Pong\"\000B>\n:org.github.omnbmh" +
-      ".samples.grpc.protobuf.zookeeper.protobu" +
-      "fP\001b\006proto3"
+      "\n\004Pong\022\017\n\007message\030\001 \001(\t*#\n\005RType\022\014\n\010ping" +
+      "ping\020\000\022\014\n\010pongpong\020\0012\"\n\010PingPong\022\026\n\004ping" +
+      "\022\005.Ping\032\005.Pong\"\000B>\n:org.github.omnbmh.sa" +
+      "mples.grpc.protobuf.zookeeper.protobufP\001" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

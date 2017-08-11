@@ -8,7 +8,13 @@ option java_package = "org.github.omnbmh.samples.grpc.protobuf.zookeeper.protobu
 
 // The greeting impl definition.
 service PingPong {
-  rpc ping (Ping) returns (Pong) {}
+  rpc ping (Ping) returns (Pong) {
+  }
+}
+
+enum RType {
+  pingping = 0;
+  pongpong = 1;
 }
 
 // The request message containing the user's name.
