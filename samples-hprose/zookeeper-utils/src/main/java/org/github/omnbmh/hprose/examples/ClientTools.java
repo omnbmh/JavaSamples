@@ -24,7 +24,7 @@ public class ClientTools {
     public static void reconnected() {
         ZooKeeper zk = ZKTools.getZooKeeperClient();
         try {
-            zk.exists("/Apps/OrgamsApi", true);
+            zk.exists("/Apps/Api", true);
         } catch (KeeperException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -36,10 +36,10 @@ public class ClientTools {
         serverInfoList = new ArrayList<>();
         try {
             ZooKeeper zk = ZKTools.getZooKeeperClient();
-            if (zk.exists("/Apps/OrgamsApi", true) == null) {
+            if (zk.exists("/Apps/Api", true) == null) {
                 return;
             }
-            List<String> serverNodes = zk.getChildren("/Apps/OrgamsApi", new Watcher() {
+            List<String> serverNodes = zk.getChildren("/Apps/Api", new Watcher() {
                 @Override
                 public void process(WatchedEvent event) {
                     System.out.println("--- client ---");
@@ -56,7 +56,7 @@ public class ClientTools {
                 }
             });
             for (int i = 0; i < serverNodes.size(); i++) {
-                String serverInfo = new String(zk.getData("/Apps/OrgamsApi/" + serverNodes.get(i), true, null));
+                String serverInfo = new String(zk.getData("/Apps/Api/" + serverNodes.get(i), true, null));
                 System.out.println(serverNodes.get(i) + " - " + serverInfo);
                 serverInfoList.add(serverInfo);
             }

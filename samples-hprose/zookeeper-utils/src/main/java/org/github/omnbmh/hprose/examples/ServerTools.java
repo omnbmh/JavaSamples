@@ -8,7 +8,7 @@ import org.apache.zookeeper.ZooKeeper;
 
 public class ServerTools {
 
-    static String ROOT_PATH = "/Apps/OrgamsApi/";
+    static String ROOT_PATH = "/Apps/Api/";
 
     static {
         try {
@@ -27,7 +27,7 @@ public class ServerTools {
             if (zk.exists(znode, false) == null) {
                 zk.create(znode, new byte[0], ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
             }
-            znode = znode + "/OrgamsApi";
+            znode = znode + "/Api";
             if (zk.exists(znode, false) == null) {
                 zk.create(znode, new byte[0], ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
             }

@@ -8,12 +8,11 @@
         <version>1.2.3.RELEASE</version>
         <relativePath />
     </parent>
-    <groupId>org.github.omnbmh.hprose.examples</groupId>
-    <artifactId>hprose-examples</artifactId>
+    <groupId>org.github.omnbmh.samples.hprose</groupId>
+    <artifactId>samples-hprose</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>hprose-examples</name>
-    <url>http://maven.apache.org</url>
+    <name>SamplesHprose</name>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.hprose/hprose-java -->
         <dependency>

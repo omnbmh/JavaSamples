@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>hprose-examples</artifactId>
-        <groupId>org.github.omnbmh.hprose.examples</groupId>
+        <groupId>org.github.omnbmh.samples.hprose</groupId>
+        <artifactId>samples-hprose</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
     <artifactId>zookeeper-utils</artifactId>
     <packaging>jar</packaging>
-    <name>ZooKeeper Utils</name>
-    <url>http://www.myorganization.org</url>
-
+    <name>ZooKeeperUtils</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -22,7 +20,7 @@
         <dependency>
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
-            <version>3.4.9</version>
+            <version>3.4.14</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.github.sgroschupf/zkclient -->
         <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
@@ -71,8 +69,6 @@
                     <includePluginDependencies>false</includePluginDependencies>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
-
 </project>
