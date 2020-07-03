@@ -9,7 +9,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
- * The greeting service definition.
+ * The greeting impl definition.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -33,14 +33,14 @@ public class PingPongGrpc {
           io.grpc.protobuf.ProtoUtils.marshaller(org.github.omnbmh.samples.zookeeper.protobuf.Pong.getDefaultInstance()));
 
   /**
-   * Creates a new async stub that supports all call types for the service
+   * Creates a new async stub that supports all call types for the impl
    */
   public static PingPongStub newStub(io.grpc.Channel channel) {
     return new PingPongStub(channel);
   }
 
   /**
-   * Creates a new blocking-style stub that supports unary and streaming output calls on the service
+   * Creates a new blocking-style stub that supports unary and streaming output calls on the impl
    */
   public static PingPongBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
@@ -48,7 +48,7 @@ public class PingPongGrpc {
   }
 
   /**
-   * Creates a new ListenableFuture-style stub that supports unary and streaming output calls on the service
+   * Creates a new ListenableFuture-style stub that supports unary and streaming output calls on the impl
    */
   public static PingPongFutureStub newFutureStub(
       io.grpc.Channel channel) {
@@ -57,7 +57,7 @@ public class PingPongGrpc {
 
   /**
    * <pre>
-   * The greeting service definition.
+   * The greeting impl definition.
    * </pre>
    */
   public static abstract class PingPongImplBase implements io.grpc.BindableService {
@@ -84,7 +84,7 @@ public class PingPongGrpc {
 
   /**
    * <pre>
-   * The greeting service definition.
+   * The greeting impl definition.
    * </pre>
    */
   public static final class PingPongStub extends io.grpc.stub.AbstractStub<PingPongStub> {
@@ -114,7 +114,7 @@ public class PingPongGrpc {
 
   /**
    * <pre>
-   * The greeting service definition.
+   * The greeting impl definition.
    * </pre>
    */
   public static final class PingPongBlockingStub extends io.grpc.stub.AbstractStub<PingPongBlockingStub> {
@@ -143,7 +143,7 @@ public class PingPongGrpc {
 
   /**
    * <pre>
-   * The greeting service definition.
+   * The greeting impl definition.
    * </pre>
    */
   public static final class PingPongFutureStub extends io.grpc.stub.AbstractStub<PingPongFutureStub> {
